@@ -1,0 +1,42 @@
+.active{
+    text-decoration-line: underline;
+    color: green;
+}
+
+.NavLink{
+  color: #821b82;
+  
+}
+
+.header{
+  display: flex;
+  gap: 30px;
+  /* margin: 0px auto; */
+    transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    display: flex;
+    flex-direction: column;
+    
+    width: 100%;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    position: fixed;
+    z-index: 1100;
+    top: 0;
+    left: auto;
+    right: 0;
+    background-color: #28282a;
+    color: #fff;
+}
+
+
+ .nav{
+    position: relative;
+    display: flex;
+    gap: 30px;
+    flex-grow: 0;
+    align-items: center;
+    padding-left: 16px;
+    padding-right: 16px;
+    min-height: 56px;
+    height: 64px;
+ }
