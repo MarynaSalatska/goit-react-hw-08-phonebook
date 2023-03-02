@@ -55,7 +55,7 @@ const authSlice = createSlice({
       })
       .addCase(logOutRequest.fulfilled, (state, action) => {
         state.isLoading = false;
-        state.token = action.payload.token;
+        state.token = null;
         state.error = null;
       })
       .addCase(logOutRequest.rejected, (state, action) => {

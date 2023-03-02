@@ -7,7 +7,7 @@ import css from './Layout.module.css';
 
 export default function Layout() {
   const isLoggedIn = useSelector(selectToken);
-  // const userData = useSelector(selectUserData);
+  //  const userData = useSelector(selectUserData);
   const dispatch = useDispatch();
   const handleLogOut = () => {
     dispatch(logOutRequest());
@@ -34,9 +34,9 @@ export default function Layout() {
               </NavLink>
               {/* <p>{userData.name}</p> */}
               <button
-                className={({ isActive }) =>
-                  isActive ? css.active : css.NavLink
-                }
+                // className={({ isActive }) =>
+                //   isActive ? css.active : css.NavLink
+                // }
                 onClick={handleLogOut}
               >
                 Logout

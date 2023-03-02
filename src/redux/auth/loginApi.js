@@ -17,8 +17,8 @@ export async function login(credential) {
   const { data } = await $publicHost.post('/users/login', credential);
   return data;
 }
-export async function logOut(credential) {
-  const { data } = await $privateHost.post('/users/logout', credential);
+export async function logOut() {
+  const { data } = await $privateHost.post('/users/logout');
   return data;
 }
 
