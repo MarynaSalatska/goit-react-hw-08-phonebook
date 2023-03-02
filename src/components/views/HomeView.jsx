@@ -1,4 +1,5 @@
 import React from 'react';
+import css from '../Layout/Layout.module.css';
 
 const styles = {
   container: {
@@ -15,12 +16,9 @@ const styles = {
 };
 
 const HomeView = () => (
-  <div style={styles.container}>
+  <div className={css.homeImg} style={styles.container}>
     <h2 style={styles.title}>
-      сторінка сервіса{' '}
-      <span role="img" aria-label="іконка вітання">
-        💁‍♀️
-      </span>
+Your Phonebook
     </h2>
       <img src="image/zebra-7757193_960_720.jpg" alt="" />
   </div>

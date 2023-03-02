@@ -25,15 +25,4 @@ export const deleteContact = async contactId => {
 //   },
 // };
 
-// const $publicHost = axios.create({
-//   baseURL: 'https://connections-api.herokuapp.com/',
-// });
-
-// export const fetchContacts = async () => {
-//   const { data } = await $privateHost.get('/contacts');
-//   return data;
-// };
-// export async function login(credential) {
-//   const { data } = await $publicHost.post('/users/login', credential);
-//   return data;
-// }
+//

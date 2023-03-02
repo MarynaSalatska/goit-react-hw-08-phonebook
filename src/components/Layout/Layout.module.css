@@ -1,42 +1,52 @@
-.active{
-    text-decoration-line: underline;
-    color: green;
+.active {
+  text-decoration-line: underline;
+  color: green;
 }
 
-.NavLink{
+.NavLink {
   color: #821b82;
-  
 }
 
-.header{
+.header {
   display: flex;
   gap: 30px;
   /* margin: 0px auto; */
-    transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-    display: flex;
-    flex-direction: column;
-    
-    width: 100%;
-    box-sizing: border-box;
-    flex-shrink: 0;
-    position: fixed;
-    z-index: 1100;
-    top: 0;
-    left: auto;
-    right: 0;
-    background-color: #28282a;
-    color: #fff;
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  position: fixed;
+  z-index: 1100;
+  top: 0;
+  left: auto;
+  right: 0;
+  background-color: #153f15;
+  color: #fff;
 }
 
+.nav {
+  position: relative;
+  display: flex;
+  gap: 30px;
+  flex-grow: 0;
+  align-items: center;
+  padding-left: 16px;
+  padding-right: 16px;
+  min-height: 56px;
+  height: 64px;
+}
 
- .nav{
-    position: relative;
-    display: flex;
-    gap: 30px;
-    flex-grow: 0;
-    align-items: center;
-    padding-left: 16px;
-    padding-right: 16px;
-    min-height: 56px;
-    height: 64px;
- }
+.homeImg {
+  background-image: url('../../image/cactus-2191647_960_720.webp');
+  background-position: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 27vw;
+  margin: auto;
+  padding: 118px 0;
+  text-align: center;
+  width: 70vw;
+}
