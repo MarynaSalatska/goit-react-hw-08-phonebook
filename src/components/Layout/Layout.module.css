@@ -1,10 +1,17 @@
 .active {
-  text-decoration-line: underline;
-  color: green;
+  text-decoration-line: none;
+  color: rgb(211, 126, 15);
+  list-style: none;
+  font-size: 16;
+  font-weight: bold;
 }
 
 .NavLink {
-  color: #821b82;
+  color: #09b009;
+  list-style: none;
+  text-decoration-line: none;
+  font-size: 16;
+  font-weight: bold;
 }
 
 .header {
@@ -26,7 +33,10 @@
   background-color: #153f15;
   color: #fff;
 }
-
+.titleHome {
+  color: rgb(211, 126, 15);
+  font-size: 16;
+}
 .nav {
   position: relative;
   display: flex;

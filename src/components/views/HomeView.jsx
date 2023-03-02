@@ -17,7 +17,7 @@ const styles = {
 
 const HomeView = () => (
   <div className={css.homeImg} style={styles.container}>
-    <h2 style={styles.title}>
+    <h2 className={css.titleHome}>
 Your Phonebook
     </h2>
       <img src="image/zebra-7757193_960_720.jpg" alt="" />

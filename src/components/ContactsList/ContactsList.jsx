@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getContactsOperation } from 'redux/operations';
 import { selectContacts, selectFilter } from 'redux/selectors';
+import css from '../ContactListItem/ContactListItem.module.css';
 
 
 export function ContactsList() {
@@ -18,7 +19,7 @@ export function ContactsList() {
   );
 
   return (
-    <ul>
+    <ul className={css.listUl}>
       {filterContacts.map(({ id, name, number }) => (
         <ContactListItem key={id} name={name} number={number} btnId={id} />
       ))}
