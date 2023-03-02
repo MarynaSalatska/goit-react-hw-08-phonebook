@@ -1,18 +1,39 @@
-import axios from 'axios';
-axios.defaults.baseURL = 'https://63fcab068ef914c5559ca25b.mockapi.io';
+import { $privateHost } from 'redux/auth/loginApi';
 
 export const fetchContacts = async () => {
-  const { data } = await axios.get('contacts');
+  const { data } = await $privateHost.get('/contacts');
   return data;
 };
 
 export const addContacts = async ({ name, number }) => {
-  const { data } = await axios.post(`/contacts`, { name, number });
+  const { data } = await $privateHost.post(`/contacts`, { name, number });
   return data;
 };
 
-export const deleteContact = async id => {
-  const { data } = await axios.delete(`/contacts/${id}`);
+export const deleteContact = async contactId => {
+  const { data } = await $privateHost.delete(`/contacts/${contactId}`);
   console.log(data);
   return data;
 };
+
+export const token = {
+  set: (token, token_type) => {
+    $privateHost.defaults.headers.common.Authorization = `${token_type} ${token}`;
+  },
+  unSet: () => {
+    $privateHost.defaults.headers.common.Authorization = '';
+  },
+};
+
+// const $publicHost = axios.create({
+//   baseURL: 'https://connections-api.herokuapp.com/',
+// });
+
+// export const fetchContacts = async () => {
+//   const { data } = await $privateHost.get('/contacts');
+//   return data;
+// };
+// export async function login(credential) {
+//   const { data } = await $publicHost.post('/users/login', credential);
+//   return data;
+// }

@@ -1,9 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { userLogin, userRegister } from './auth';
+import { logOutRequest, refreshUser, userLogin, userRegister } from './authOperations';
 
 const initialState = {
-  access_token: 'string',
-  token_type: 'string',
+  token: null,
   isLoading: false,
   error: null,
 };
@@ -18,8 +17,7 @@ const authSlice = createSlice({
       })
       .addCase(userLogin.fulfilled, (state, action) => {
         state.isLoading = false;
-        state.access_token = action.payload.access_token;
-        state.token_type = action.payload.token_type;
+        state.token = action.payload.token;
         state.error = null;
       })
       .addCase(userLogin.rejected, (state, action) => {
@@ -31,15 +29,45 @@ const authSlice = createSlice({
       })
       .addCase(userRegister.fulfilled, (state, action) => {
         state.isLoading = false;
-        state.access_token = action.payload.access_token;
-        state.token_type = action.payload.token_type;
+        state.token = action.payload.token;
         state.error = null;
       })
       .addCase(userRegister.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload;
       })
+      // ----- Get current user -----
+      .addCase(refreshUser.pending, (state, action) => {
+        state.isLoading = true;
+      })
+      .addCase(refreshUser.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.token = action.payload.token;
+        state.error = null;
+      })
+      .addCase(refreshUser.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload;
+      })
+      // ----- Logout -----
+      .addCase(logOutRequest.pending, (state, action) => {
+        state.isLoading = true;
+      })
+      .addCase(logOutRequest.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.token = action.payload.token;
+        state.error = null;
+      })
+      .addCase(logOutRequest.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload;
+      });
   },
 });
+
+
+
+
+
 
 export const authReducer = authSlice.reducer;

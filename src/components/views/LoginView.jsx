@@ -6,7 +6,7 @@ import React, { useState } from 'react';
 // import Button from '@mui/material/Button';
 // import { TextField } from '@mui/material';
 import { useDispatch } from 'react-redux';
-import { userLogin } from 'redux/auth/auth';
+import { userLogin } from 'redux/auth/authOperations';
 import css from './Form.module.css';
 
 export default function LoginView() {
@@ -28,7 +28,8 @@ export default function LoginView() {
         email,
         password,
       })
-    );
+    )
+    
     e.target.reset();
   };
 
