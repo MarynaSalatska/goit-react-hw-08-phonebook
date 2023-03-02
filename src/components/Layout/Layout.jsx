@@ -2,12 +2,12 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, Outlet } from 'react-router-dom';
 import { logOutRequest } from 'redux/auth/authOperations';
-import { selectToken } from 'redux/selectors';
+import { selectToken, selectUserEmail } from 'redux/selectors';
 import css from './Layout.module.css';
 
 export default function Layout() {
   const isLoggedIn = useSelector(selectToken);
-  //  const userData = useSelector(selectUserData);
+  const userEmail = useSelector(selectUserEmail);
   const dispatch = useDispatch();
   const handleLogOut = () => {
     dispatch(logOutRequest());
@@ -32,7 +32,7 @@ export default function Layout() {
               >
                 Contacts
               </NavLink>
-              {/* <p>{userData.name}</p> */}
+              <p>{userEmail}</p>
               <button
                 // className={({ isActive }) =>
                 //   isActive ? css.active : css.NavLink

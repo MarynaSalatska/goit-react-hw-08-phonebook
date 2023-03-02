@@ -20,7 +20,7 @@ const HomeView = () => (
     <h2 className={css.titleHome}>
 Your Phonebook
     </h2>
-      <img src="image/zebra-7757193_960_720.jpg" alt="" />
+   
   </div>
 );
 
