@@ -51,21 +51,3 @@ export function rejectHandler(state, action) {
 // export const { deleteAction, addContact } = contactsSlice.actions;
 export const contactsReducer = contactsSlice.reducer;
 
-// deleteAction(state, action) {
-//   state.items = state.items.filter(
-//     contact => contact.id !== action.payload
-//   );
-// },
-// addContact: {
-//   reducer(state, action) {
-//     state.items.push(action.payload);
-//   },
-//   prepare(contact) {
-//     return {
-//       payload: {
-//         id: nanoid(),
-//         ...contact,
-//       },
-//     };
-//   },
-// },

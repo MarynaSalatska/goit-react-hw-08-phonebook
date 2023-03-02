@@ -9,10 +9,6 @@ export const userRegister = createAsyncThunk(
     try {
       const response = await register(data);
       token.set(response.token, 'Bearer');
-      // thunkAPI.dispatch(
-      //   userLogin({ email: data.email, password: data.password })
-      // );
-      // console.log(response);
       return response;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);

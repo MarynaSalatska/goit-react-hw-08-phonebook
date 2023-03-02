@@ -16,14 +16,14 @@ export const deleteContact = async contactId => {
   return data;
 };
 
-export const token = {
-  set: (token, token_type) => {
-    $privateHost.defaults.headers.common.Authorization = `${token_type} ${token}`;
-  },
-  unSet: () => {
-    $privateHost.defaults.headers.common.Authorization = '';
-  },
-};
+// export const token = {
+//   set: (token, token_type) => {
+//     $privateHost.defaults.headers.common.Authorization = `${token_type} ${token}`;
+//   },
+//   unSet: () => {
+//     $privateHost.defaults.headers.common.Authorization = '';
+//   },
+// };
 
 // const $publicHost = axios.create({
 //   baseURL: 'https://connections-api.herokuapp.com/',
