@@ -5,7 +5,6 @@ import { register, token } from './loginApi';
 export const userRegister = createAsyncThunk(
   'user/userRegister',
   async (data, thunkAPI) => {
-    console.log(data);
     try {
       const response = await register(data);
       token.set(response.token, 'Bearer');
