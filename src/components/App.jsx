@@ -15,10 +15,9 @@ const LazyContactsView = lazy(() => import('../components/views/ContactsView'));
 function App() {
   const dispatch = useDispatch();
 
-
   useEffect(() => {
     dispatch(refreshUser());
-  });
+  }, [dispatch]);
   return (
     <Suspense>
       <Routes>

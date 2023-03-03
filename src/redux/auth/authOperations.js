@@ -35,15 +35,28 @@ export const refreshUser = createAsyncThunk(
       const { token: savedToken } = thunkAPI.getState().auth;
       if (!savedToken) return thunkAPI.rejectWithValue('no token');
       token.set(savedToken);
-      console.log(savedToken);
       const response = await getUserData();
-      console.log(response);
       return response;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }
   }
 );
+// export const getCurrentUserRequest = createAsyncThunk(
+//   'user/getCurrent',
+//   async (_, { rejectWithValue, getState }) => {
+//     try {
+//       const persistToken = getState().auth.token;
+//       if (!persistToken) return rejectWithValue('No token');
+//       token.set(persistToken, 'Bearer');
+//       const response = await getUserDetailsRequest();
+//       return response;
+//     } catch (error) {
+//       return rejectWithValue(error.message);
+//     }
+//   }
+// );
+
 
 export const logOutRequest = createAsyncThunk(
   'user/logout',
