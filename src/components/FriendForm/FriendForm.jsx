@@ -45,7 +45,7 @@ export function FriendForm({ onSubmit }) {
 
   return (
     <form onSubmit={handleSubmit} className={css.formCnt}>
-      <label>
+      <label className={css.labelCnt}>
         Name
         <input
           type="text"
@@ -57,7 +57,7 @@ export function FriendForm({ onSubmit }) {
           required
         />
       </label>
-      <label>
+      <label className={css.labelCnt}>
         Number
         <input
           type="tel"

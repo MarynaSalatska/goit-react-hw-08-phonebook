@@ -36,7 +36,9 @@ export const refreshUser = createAsyncThunk(
       const { token: savedToken } = thunkAPI.getState().auth;
       if (!savedToken) return thunkAPI.rejectWithValue('no token');
       token.set(savedToken);
+      console.log(savedToken);
       const response = await getUserData();
+      console.log(response);
       return response;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
