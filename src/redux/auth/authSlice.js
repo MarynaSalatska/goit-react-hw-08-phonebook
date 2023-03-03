@@ -18,22 +18,20 @@ const authSlice = createSlice({
   initialState,
   extraReducers: builder => {
     builder
-      .addCase(userLogin.pending, (state, action) => {
+      .addCase(userLogin.pending, state => {
         state.isLoading = true;
       })
       .addCase(userLogin.fulfilled, (state, action) => {
         state.isLoading = false;
         state.token = action.payload.token;
         state.email = action.payload.user.email;
-        console.log(state.email);
-        console.log(action.payload);
         state.error = null;
       })
       .addCase(userLogin.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload;
       })
-      .addCase(userRegister.pending, (state, action) => {
+      .addCase(userRegister.pending, state => {
         state.isLoading = true;
       })
       .addCase(userRegister.fulfilled, (state, action) => {
@@ -46,13 +44,12 @@ const authSlice = createSlice({
         state.error = action.payload;
       })
       // ----- Get current user -----
-      .addCase(refreshUser.pending, (state, action) => {
+      .addCase(refreshUser.pending, state => {
         state.isLoading = true;
       })
       .addCase(refreshUser.fulfilled, (state, action) => {
         state.isLoading = false;
-         state.token = action.payload.token;
-         state.email=action.payload.email
+        state.email = action.payload.email;
         state.error = null;
       })
       .addCase(refreshUser.rejected, (state, action) => {
@@ -60,17 +57,16 @@ const authSlice = createSlice({
         state.error = action.payload;
       })
       // ----- Logout -----
-      .addCase(logOutRequest.pending, (state, action) => {
+      .addCase(logOutRequest.pending, state => {
         state.isLoading = true;
       })
-      .addCase(logOutRequest.fulfilled, (state, action) => {
-        state.isLoading = false;
-        state.token = null;
-        state.error = null;
+      .addCase(logOutRequest.fulfilled, () => {
+        return initialState;
       })
       .addCase(logOutRequest.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload;
+        state.token = null;
       });
   },
 });
