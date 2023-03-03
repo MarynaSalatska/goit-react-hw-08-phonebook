@@ -60,3 +60,10 @@
   text-align: center;
   width: 70vw;
 }
+
+.titleContact {
+  color: rgb(211, 126, 15);
+  font-size: 16;
+  align-items: center;
+  text-align: center;
+}

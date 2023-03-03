@@ -8,14 +8,14 @@
   font-size: 12px;
 }
 .btnDelete:hover {
-  background-color: #ce1010;
+  background-color:  rgb(211, 126, 15);
 }
 
 .listSt{
   list-style: none;
   align-items: center;
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
 }
 
 .listUl{

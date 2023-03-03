@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { addFilter } from 'redux/filterSlice';
+import css from '../ContactListItem/ContactListItem.module.css';
 
 export function Filter() {
   const value = useSelector(state => state.filter.filter);
@@ -13,8 +14,8 @@ export function Filter() {
 
   return (
     <div>
-      <div>
-        <p>Find contacts by name</p>
+      <div className={css.listUl}>
+        <p >Find contacts by name</p>
         <input
           type="text"
           name="filter"

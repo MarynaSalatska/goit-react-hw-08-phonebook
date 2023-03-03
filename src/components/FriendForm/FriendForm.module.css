@@ -10,11 +10,14 @@
 }
 
 .addBtn:hover {
-  background-color: #1a6bed;
+  background-color:  rgb(211, 126, 15);
 }
 
 .formCnt {
   display: flex;
   flex-direction: column;
   gap: 20px;
+   display: flex;
+   align-items: center;
+    flex-direction: column;
 }
